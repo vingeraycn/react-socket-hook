@@ -1,8 +1,13 @@
 {
   "name": "react-socket-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
-  "files": ["lib", "package.json", "LICENSE", "README.md"],
+  "files": [
+    "lib",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "license": "MIT",
   "author": {
     "name": "雷玮杰",
@@ -52,12 +57,12 @@
     "parcel": "^2.0.0-nightly.207",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.2.1",
-    "stylelint": "^13.8.0",
-    "stylelint-config-recommended": "^3.0.0",
-    "typescript": "^4.1.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-is": ">=17.0.1"
+    "react-is": ">=17.0.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "typescript": "^4.1.3"
   },
   "peerDependencies": {
     "react": "^16.8",
