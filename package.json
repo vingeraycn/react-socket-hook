@@ -11,12 +11,12 @@
     "latest"
   ],
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel example/index.html",
+    "build": "parcel build example/index.html",
     "lint": "run-p lint:*",
-    "lint:eslint": "eslint ./src/**/* --ext .ts,.tsx --fix",
-    "lint:css": "stylelint ./src/**/*.{ts,tsx}",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint:eslint": "eslint example/**/* --ext .ts,.tsx --fix",
+    "lint:css": "stylelint example/**/*.{ts,tsx}",
+    "format": "prettier --write 'example/**/*.{ts,tsx}'",
     "cz": "yarn format && yarn lint && git add . && git cz",
     "upgrade-dependencies": "npx npm-check-updates -u && yarn"
   },

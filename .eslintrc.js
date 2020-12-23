@@ -1,11 +1,11 @@
-const OFF = 0;
-const WARNING = 1;
-const ERROR = 2;
+const OFF = 0
+const WARNING = 1
+const ERROR = 2
 
 module.exports = {
   env: {
     browser: true,
-    es6: true
+    es6: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -16,12 +16,12 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/react'
+    'prettier/react',
   ],
   plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
     quotes: [ERROR, 'single'], // 引号类型
-    semi: [ERROR, 'always'], // 语句强制分号结尾
+    semi: [OFF, 'always'], // 语句强制分号结尾
     'space-infix-ops': ERROR, // 中缀操作符周围要不要有空格
     'no-param-reassign': OFF, // 不允许对函数的形参进行赋值
     'prefer-spread': ERROR, // 首选展开运算
@@ -49,6 +49,11 @@ module.exports = {
     'func-names': OFF,
     '@typescript-eslint/no-unused-vars': OFF,
     'import/named': OFF,
-    'react/no-array-index-key': OFF
-  }
-};
+    'react/no-array-index-key': OFF,
+    '@typescript-eslint/semi': OFF,
+    '@typescript-eslint/no-empty-interface': WARNING,
+    '@typescript-eslint/no-unused-expressions': OFF,
+    'consistent-return': OFF,
+    '@typescript-eslint/comma-dangle': OFF,
+  },
+}
