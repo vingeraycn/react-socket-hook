@@ -1,8 +1,14 @@
 {
   "name": "react-socket-hooks",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "files": ["lib", "package.json", "LICENSE", "README.md"],
   "license": "MIT",
+  "author": {
+    "name": "雷玮杰",
+    "email": "vingeray@gmail.com",
+    "url": "https://github.com/leihancn"
+  },
   "keywords": [
     "react",
     "parcel",
@@ -12,7 +18,7 @@
   ],
   "scripts": {
     "dev": "parcel example/index.html",
-    "build": "parcel build example/index.html",
+    "build": "rm -rf lib && tsc --project tsconfig.json --outDir 'lib' -d",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint example/**/* --ext .ts,.tsx --fix",
     "lint:css": "stylelint example/**/*.{ts,tsx}",
