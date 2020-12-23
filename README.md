@@ -1,4 +1,4 @@
-## 快速启动的脚手架
+## React Socket Hook
 ![GitHub](https://img.shields.io/github/license/leihancn/react-socket-hook)
 ![David](https://img.shields.io/david/leihancn/react-socket-hook)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/leihancn/react-socket-hook)
