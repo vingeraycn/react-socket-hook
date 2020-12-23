@@ -1,10 +1,8 @@
 module.exports = {
   processors: [
-    'stylelint-processor-styled-components',
   ],
   extends: [
     'stylelint-config-recommended',
-    'stylelint-config-styled-components',
   ],
   rules: {
     // 覆盖 stylelint-config-standard 规则

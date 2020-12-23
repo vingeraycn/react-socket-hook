@@ -1,8 +1,8 @@
-import React from 'react';
-import Index from './pages';
+import React from 'react'
+import Index from './pages'
 
 const App = () => {
-  return <Index />;
-};
+  return <Index />
+}
 
-export default App;
+export default App
