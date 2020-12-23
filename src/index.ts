@@ -1,10 +1,15 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export type DataType = string | ArrayBufferLike | Blob | ArrayBufferView
 
 export interface UseSocketOptions {
   protocols?: WebSocket['protocol']
   binaryType?: BinaryType
+
+  /**
+   * 自动连接
+   * @default true
+   */
   autoConnect?: boolean
   onConnected?: () => void
   onClosed?: () => void
@@ -42,14 +47,14 @@ const useSocket: UseSocket = (url, options) => {
     onClosed,
     onReceived,
     onError,
-    autoConnect,
+    autoConnect = true,
     binaryType = 'blob',
     protocols,
   } = options ?? {}
   const wsRef = useRef<InstanceType<typeof WebSocket> | null>(
     autoConnect ? new WebSocket(url, protocols) : null
   )
-  const readyState = wsRef.current?.readyState
+  const [updateKey, setUpdateKey] = useState(Math.random())
   const handleReceived = useCallback(
     (event: MessageEvent) => onReceived?.(event.data),
     [onReceived]
@@ -74,12 +79,13 @@ const useSocket: UseSocket = (url, options) => {
       onReceived && ws.removeEventListener('message', handleReceived)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [wsRef.current])
+  }, [updateKey])
 
   return {
     connect: () => {
-      if (!wsRef.current) {
+      if (wsRef.current?.readyState === WebSocket.CLOSED) {
         wsRef.current = new WebSocket(url, protocols)
+        setUpdateKey(Math.random())
       }
     },
     close: () => {
