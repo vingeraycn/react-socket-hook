@@ -18,7 +18,7 @@ import useSocket from 'react-socket-hook'
 
 const { send } = useSocket('wss://echo.websocket.org', {
   onReceived: (data: DataType) => {
-    // hanlde data in here.
+    // handle data in here.
   },
 })
 
