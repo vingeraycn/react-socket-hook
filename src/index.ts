@@ -52,7 +52,7 @@ const useSocket: UseSocket = (url, options) => {
     protocols,
   } = options ?? {}
   const wsRef = useRef<InstanceType<typeof WebSocket> | null>(
-    autoConnect ? new WebSocket(url, protocols) : null
+    url && autoConnect ? new WebSocket(url, protocols) : null
   )
   const [updateKey, setUpdateKey] = useState(Math.random())
   const handleReceived = useCallback(
@@ -83,7 +83,7 @@ const useSocket: UseSocket = (url, options) => {
 
   return {
     connect: () => {
-      if (wsRef.current?.readyState === WebSocket.CLOSED) {
+      if (!wsRef.current || wsRef.current?.readyState === WebSocket.CLOSED) {
         wsRef.current = new WebSocket(url, protocols)
         setUpdateKey(Math.random())
       }
